@@ -17,7 +17,7 @@ export default function Card() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get("http://localhost:3000/dados");
+        const response = await axios.get("https://cardapioapi-3skr.onrender.com/dados");
         setData(response.data);
       } catch (error) {
         console.error("houve algum erro :", error);
@@ -28,13 +28,13 @@ export default function Card() {
   }, [data]);
 
   const DeleteCard = async (_id: string) => {
-    const response = await axios.delete(`http://localhost:3000/dados/${_id}`);
+    const response = await axios.delete(`https://cardapioapi-3skr.onrender.com/dados/${_id}`);
     return response;
   };
 
   return data.map((item) => (
     <div key={item._id}>
-      <div className="md:max-w-80 text-xl text-slate-950 p-4 bg-gray-400 border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 sm:max-w-80">
+      <div className="md:max-w-80 text-xl text-slate-950 p-4 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 sm:max-w-80">
         <h1 className="p-2 text-2xl font-medium">Prato: {item.Name}</h1>
         <img src={item.Url} className="w-full h-64" />
         <span className=" font-bold">Preço: R${item.Price} </span>
@@ -51,3 +51,4 @@ export default function Card() {
     </div>
   ));
 }
+

@@ -21,7 +21,7 @@ export default function Modal({ isOpen, ToggleModal }: ModalProps) {
     ) {
       return;
     } else {
-      const response = await axios.post("http://localhost:3000/dados", {
+      const response = await axios.post("https://cardapioapi-3skr.onrender.com/dados", {
         Name: NameRef.current?.value,
         Url: ImgRef.current?.value,
         Price: ValueRef.current?.value,
@@ -62,3 +62,5 @@ export default function Modal({ isOpen, ToggleModal }: ModalProps) {
 
   return null;
 }
+
+
