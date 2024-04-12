@@ -45,9 +45,9 @@ export default function Modal({ isOpen, ToggleModal }: ModalProps) {
               fechar
             </button>
           </div>
-          <Input name="Nome Do prato" inputRef={NameRef} />
-          <Input name="Url Da Imagem" inputRef={ImgRef} />
-          <Input name="Valor Do prato" inputRef={ValueRef} />
+          <Input name="Nome Do prato" inputRef={NameRef} placeholderName="Digite o nome do prato"/>
+          <Input name="Url Da Imagem" inputRef={ImgRef} placeholderName="Digite a url da imagem" />
+          <Input name="Valor Do prato" inputRef={ValueRef} placeholderName="Digite o valor do prato" />
 
           <button
             onClick={CreateCards}

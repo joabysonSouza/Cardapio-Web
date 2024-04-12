@@ -5,10 +5,11 @@ import { LegacyRef, useState } from "react";
 export interface InputProps {
   name: string;
   inputRef: any
+  placeholderName: string
 
 }
 
-export default function Input({ name, inputRef}: InputProps) {
+export default function Input({ name, inputRef, placeholderName}: InputProps) {
 ; // Adicione um estado local
 
   
@@ -22,6 +23,7 @@ export default function Input({ name, inputRef}: InputProps) {
         ref={inputRef}
         type="text"
         className="block w-full p-4 border-solid border-4 rounded-md  border-gray-400 focus:border-blue-700 "
+        placeholder={placeholderName}
       />
     </div>
   );
